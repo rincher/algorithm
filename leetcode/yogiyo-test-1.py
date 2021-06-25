@@ -19,8 +19,8 @@ def solution(S, C):
         Last_name = name.split(" ")[-1].lower()
         Last_name = Last_name.replace("-", "")
         Email_name = First_name + "." + Last_name
-        Email_name = check_duplicate(Email_name, Email)
-        Email += name + " " + "<" + Email_name + "@" + C.lower() + ".com" + ">, "
+        Email_List.append(Email_name)
+
     return Email
 
 
