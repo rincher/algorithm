@@ -1,13 +1,17 @@
 class Solution:
-    def plusOne(self, digits: List[int]) -> List[int]:
-        answer = 0
+    def plusOne(digits):
+        answer = ""
+        number = ""
         array = []
-        length = len(digits)
-        for i in digits:
-            length -= 1
-            answer += i * 10 ** (length)
-        answer += 1
-        answer = str(answer)
-        for i in answer:
-            array.append(i)
+
+        for digit in digits:
+            number += str(digit)
+
+        answer = int(number) + 1
+
+        for char in str(answer):
+            array.append(char)
         return array
+
+    digits = ["1", "2", "3"]
+    print(plusOne(digits))
