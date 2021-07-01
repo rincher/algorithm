@@ -1,17 +1,22 @@
 def romanToInt(s):
-    roman2int = {"I": 1, "IV": 4, "V": 5, "IX": 9, "X": 10, "XL": 40,
-                 "L": 50, "XC": 90, "C": 100, "CD": 400, "D": 500, "CM": 900, "M": 1000}
-    value = 0
-    cursor = 0
-    while cursor < len(s):
-        if (cursor+1) != len(s) and s[cursor]+s[cursor+1] in roman2int:
-            value += roman2int[s[cursor]+s[cursor+1]]
-            cursor += 2
-        else:
-            value += roman2int[s[cursor]]
-            cursor += 1
-    return value
+    roman2int = {"I": 1, "V": 5, "X": 10,
+                 "L": 50, "C": 100, "D": 500, "M": 1000}
+    charList = list(s)
+    intList = []
+    for char in charList:
+        intList.append(roman2int.get(char))
+
+    retValue = 0
+
+    for i in range(0, len(intList)):
+        if i == len(intList) - 1:
+            retValue += intList[i]
+        elif intList[i] >= intList[i + 1]:
+            retValue += intList[i]
+        elif intList[i] < intList[i+1]:
+            retValue -= intList[i]
+    return retValue
 
 
-s = "MCMXCIV"
+s = "VI"
 print(romanToInt(s))
