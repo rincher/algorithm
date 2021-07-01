@@ -6,4 +6,4 @@ def strStr(haystack, needle):
         return -1
 
 
-print(strStr("", ""))
+print(strStr("aaaaaaaaa", "bba"))
