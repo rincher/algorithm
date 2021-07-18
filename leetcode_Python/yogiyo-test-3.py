@@ -1,5 +1,4 @@
 def solution(S):
-    for
     Size = S[0]
     Date = s[0, 5]
     Name = S[-1]
